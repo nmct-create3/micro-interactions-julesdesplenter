@@ -40,7 +40,7 @@ const enableListeners = function() {
     }
   });
   password.input.addEventListener('blur', function(e) {
-    if (isEmpty(e.target.value)) {  
+    if (isEmpty(e.target.value)) {
       addError(password);
       password.errormessage.innerHTML = 'this field is required';
     } else if (isValidPassword(e.target.value)) {
@@ -50,7 +50,8 @@ const enableListeners = function() {
       removeError(password);
     }
   });
-  signInButtton.addEventListener('click', function() {
+  signInButtton.addEventListener('click', function(event) {
+    e.preventDefault();
     console.log('click');
   });
 };
